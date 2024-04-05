@@ -1,0 +1,1 @@
+alias checkcpunum="sysctl -n hw.logicalcpu"

@@ -1,0 +1,39 @@
+alias checkip="curl ifconfig.me"
+alias checkport="sudo lsof -PiTCP -sTCP:LISTEN"
+alias checkgpu="nvidia-smi --query-gpu=gpu_name --format=csv"
+alias checkcpu="htop"
+alias checkdriver="ls -R /lib/modules/`uname -r`/kernel/ | grep nvidia"
+
+# to remember
+alias unzipchildfile="echo 'find . -name \"*.zip\" | xargs -P 5 -I fileName sh -c '\''unzip -o -d \"\$(dirname \"fileName\")/\$(basename -s .zip \"fileName\")\" \"fileName\"'\'"
+alias findimages="find . -name '*.jpg' -or -name '*.png' -or -name '*.pgm'|wc -l"
+
+# tmux
+alias mux='tmux new -d -s delete-me && \
+		tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh && \
+		tmux kill-session -t delete-me && \
+		tmux attach || tmux attach'
+
+# virtual env
+alias activatevirtualenvpytorch='source ${PATH_VIRTUALENV_PYTORCH}/bin/activate'
+
+# ansible
+[[ $commands[ansible] ]] && alias ansible-shutdown='ansibleshutdown(){ echo $@ will be shutdown; ansible $@ -b -a "/sbin/shutdown +1" -u ubuntu -K }; ansibleshutdown'
+[[ $commands[ansible] ]] && alias ansible-reboot='ansiblereboot(){ echo $@ will be restart; ansible $@ -b -a "/sbin/shutdown -r +1" -u ubuntu -K }; ansiblereboot'
+[[ $commands[ansible] ]] && alias ansible-check='ansiblecheck(){ ansible all -m ping -u ubuntu }; ansiblecheck'
+
+# k8s
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh) && alias k=kubectl
+
+# for docker ignore k8s
+docker() {
+    if [[ $@ == "ps" ]]; then
+	echo 'THIS COMMAND IS ALIAS: docker ps | grep -v "k8s" | grep -v "goharbor" | grep -v "glt-nginx"    \n'
+        command docker ps | grep -v "k8s" | grep -v "goharbor" | grep -v "glt-nginx"
+    elif [[ $@ == "image prune" ]]; then
+	echo 'THIS COMMAND IS ALIAS: docker image prune -a --filter "until=24h"\n'
+	command docker image prune -a --filter "until=24h"
+    else
+        command docker "$@"
+    fi
+}
