@@ -1,0 +1,15 @@
+[user]
+	email = solangii1229@gmail.com
+	name = Solang Kim 
+
+[alias]
+	logs = log --graph --abbrev-commit --decorate --format=format:'%C(cyan)%h%C(reset) - %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(yellow)%d%C(reset)' --all
+	dif = diff --compact-summary
+	printlogs = ! git log -10 --oneline | tail 
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
