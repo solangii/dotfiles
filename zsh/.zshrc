@@ -80,6 +80,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git
   zsh-autosuggestions
   autojump
+  docker
+  docker-compose
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -113,3 +115,52 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# 1. import dotfiles
+export DOTFILES=$HOME/Workspaces/dotfiles
+
+# 2. run script by OS
+case `uname` in
+  Linux )
+#   echo "this is Linux"
+    if [ -f $DOTFILES/alias/.ubuntu ] ; then
+      source $DOTFILES/alias/.ubuntu
+    fi
+    ;;
+  Darwin )
+#   echo "this is MACOS"
+    export PATH="/opt/homebrew/bin:$PATH"
+    if [ -f $DOTFILES/alias/.mac-os ] ; then
+      source $DOTFILES/alias/.mac-os
+    fi
+    ;;
+  * )
+    echo "I don't know this OS"
+    ;;
+esac
+
+# 3. run script by hostname
+# [todo] not yet..!
+
+# 4. finally making alias
+if [ -f $DOTFILES/alias/.common ] ; then
+  source $DOTFILES/alias/.common
+fi
+
+# 5. settings for etc.
+# 5-1 autocumplete for ssh
+h=()
+if [[ -r ~/.ssh/config ]]; then
+  h=($h ${${${(@M)${(f)"$(cat ~/.ssh/config)"}:#Host *}#Host }:#*[*?]*})
+fi
+if [[ -r ~/.ssh/known_hosts ]]; then
+  h=($h ${${${(f)"$(cat ~/.ssh/known_hosts{,2} || true)"}%%\ *}%%,*}) 2>/dev/null
+fi
+if [[ $#h -gt 0 ]]; then
+  zstyle ':completion:*:ssh:*' hosts $h
+  zstyle ':completion:*:slogin:*' hosts $h
+fi
+
+# 5-2 autocumplete for kubernetes
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh) && alias k=kubectl
+
