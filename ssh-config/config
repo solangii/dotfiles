@@ -1,0 +1,13 @@
+Host kt
+    HostName solang-kt
+    User solang
+    Port 9901
+
+Host gearth
+    HostName localhost
+    User work
+    IdentityFile ~/id_container
+    Port 9901
+    StrictHostKeyChecking no
+    UserKnownHostsFile=/dev/null
+

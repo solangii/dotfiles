@@ -1,0 +1,2 @@
+- `~/.ssh/config`에서 HostName에 ip를 직접 노출하는 것은 보안상 좋지 않다. 따라서, HostName을 변수처리하여 `/etc/hosts` 파일에 적어두자.
+- 이때, `/etc/hosts`는 기본값이 있기 때문에, dotfiles에 있는 내용을 참고하여 수동으로 옮겨 넣어야함에 유의하자.
