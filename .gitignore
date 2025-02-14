@@ -1,1 +1,4 @@
 .DS_Store
+# Ignore env files
+env/.dotfiles_env
+env/.private_env
