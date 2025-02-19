@@ -37,6 +37,9 @@ endif
 
 
 " 표시 관련
+set nu
+set hlsearch
+set incsearch
 set history=1000    " 명령어에 대한 히스토리를 1000개까지
 set nobackup      " 백업파일을 만들지 않음
 set title               " 제목을 표시
@@ -46,4 +49,12 @@ set wmnu           " tab 자동완성시 가능한 목록을 보여줌
 set ignorecase     " 검색시 대소문자 구별하지않음
 
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab	" yaml 띄어쓰기
+
+" 자동화
+" 마지막 수정 위치로 커서 이동
+autocmd BufRead * autocmd FileType <buffer> ++once
+      \ if &ft !~# 'commit\|rebase' && line("'\"") > 1 && line("'\"") <= line("$") | exe 'normal! g`"' | endif
+" trailing whitespace 제거
+au BufWritePre * :%s/\s\+$//e
+
 
