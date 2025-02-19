@@ -1,1 +1,2 @@
 alias checkcpunum="nproc"
+alias cat="batcat"

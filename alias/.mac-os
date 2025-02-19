@@ -1,1 +1,2 @@
 alias checkcpunum="sysctl -n hw.logicalcpu"
+alias cat="bat"
