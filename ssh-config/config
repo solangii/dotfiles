@@ -10,4 +10,3 @@ Host gearth
     Port 9901
     StrictHostKeyChecking no
     UserKnownHostsFile=/dev/null
-

@@ -11,7 +11,7 @@
 - fzf: 터미널에서 파일, 디렉토리, 커맨드 검색할 때 엄청 빠르고 편리함
   - ls | fzf 하면 인터랙티브하게 파일 선택 가능
 - ripgrep: grep보다 빠르고 강력한 검색 도구
-  - "pattern" → grep보다 빠른 텍스트 검색
+  - rg "pattern" → grep보다 빠른 텍스트 검색
 - bat: cat 명령어의 업그레이드 버전, 코드 하이라이팅 지원
 - [eza](https://github.com/eza-community/eza?tab=readme-ov-file): ls 대체제, 컬러 출력 + Git 상태 표시
 
