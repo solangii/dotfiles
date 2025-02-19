@@ -4,6 +4,9 @@ alias checkgpu="nvidia-smi --query-gpu=gpu_name --format=csv"
 alias checkcpu="btop"
 alias checkdriver="ls -R /lib/modules/`uname -r`/kernel/ | rg nvidia"
 
+# plugin
+alias cat="bat"
+
 # to remember
 alias unzipchildfile="echo 'find . -name \"*.zip\" | xargs -P 5 -I fileName sh -c '\''unzip -o -d \"\$(dirname \"fileName\")/\$(basename -s .zip \"fileName\")\" \"fileName\"'\'"
 alias findimages="find . -name '*.jpg' -or -name '*.png' -or -name '*.pgm'|wc -l"
