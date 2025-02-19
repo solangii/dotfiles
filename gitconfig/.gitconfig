@@ -5,7 +5,22 @@
 [alias]
 	logs = log --graph --abbrev-commit --decorate --format=format:'%C(cyan)%h%C(reset) - %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(yellow)%d%C(reset)' --all
 	dif = diff --compact-summary
+	st = status -sb
 	printlogs = ! git log -10 --oneline | tail 
+	ll = log --oneline
+	last = log -1 HEAD --stat
+	ad = add .
+	cm = commit -m
+	ac = commit -a -m
+	cam = commit --amend -m
+	can = commit --amend --no-edit
+	ps = push origin $(git_current_branch)
+	pl = pull origin $(git_current_branch)
+	rv = remote -v
+	br = branch
+	brd = branch -D
+	co = checkout
+	cob = checkout -b
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
