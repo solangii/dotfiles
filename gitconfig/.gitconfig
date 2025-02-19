@@ -14,8 +14,8 @@
 	ac = commit -a -m
 	cam = commit --amend -m
 	can = commit --amend --no-edit
-	ps = push origin $(git_current_branch)
-	pl = pull origin $(git_current_branch)
+	ps = "!f() { git push origin $(git rev-parse --abbrev-ref HEAD); }; f"
+	pl = "!f() { git pull origin $(git rev-parse --abbrev-ref HEAD); }; f"
 	rv = remote -v
 	br = branch
 	brd = branch -D
