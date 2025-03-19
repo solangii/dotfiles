@@ -1,0 +1,21 @@
+Host github.com
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
+
+Host kt
+    HostName solang-kt
+    User solang
+    Port 9901
+
+Host nas
+	HostName kt-vision-nas
+	User visionadmin
+
+Host gearth
+    HostName localhost
+    User work
+    IdentityFile ~/id_container
+    Port 9901
+    StrictHostKeyChecking no
+    UserKnownHostsFile=/dev/null
