@@ -1,3 +1,5 @@
+alias vi="nvim"
+alias vim="nvim"
 alias checkip="curl ifconfig.me"
 alias checkport="sudo lsof -PiTCP -sTCP:LISTEN"
 alias checkgpu="nvidia-smi --query-gpu=gpu_name --format=csv"
