@@ -1,2 +1,3 @@
 alias checkcpunum="sysctl -n hw.logicalcpu"
 alias cat="bat"
+alias gcloud="/Users/solang/google-cloud-sdk/bin/gcloud"

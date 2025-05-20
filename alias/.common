@@ -5,6 +5,7 @@ alias checkport="sudo lsof -PiTCP -sTCP:LISTEN"
 alias checkgpu="nvidia-smi --query-gpu=gpu_name --format=csv"
 alias checkcpu="btop"
 alias checkdriver="ls -R /lib/modules/`uname -r`/kernel/ | rg nvidia"
+alias docker-compose="docker compose"
 
 # to remember
 alias unzipchildfile="echo 'find . -name \"*.zip\" | xargs -P 5 -I fileName sh -c '\''unzip -o -d \"\$(dirname \"fileName\")/\$(basename -s .zip \"fileName\")\" \"fileName\"'\'"
