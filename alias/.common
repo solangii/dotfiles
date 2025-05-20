@@ -6,6 +6,9 @@ alias checkgpu="nvidia-smi --query-gpu=gpu_name --format=csv"
 alias checkcpu="btop"
 alias checkdriver="ls -R /lib/modules/`uname -r`/kernel/ | rg nvidia"
 alias docker-compose="docker compose"
+alias dc="docker compose"
+alias dcu="docker compose up"
+alias dcd="docker compose down"
 
 # to remember
 alias unzipchildfile="echo 'find . -name \"*.zip\" | xargs -P 5 -I fileName sh -c '\''unzip -o -d \"\$(dirname \"fileName\")/\$(basename -s .zip \"fileName\")\" \"fileName\"'\'"
