@@ -3,6 +3,11 @@ Host github.com
   UseKeychain yes
   IdentityFile ~/.ssh/id_ed25519
 
+Host kt2
+  HostName kt-temp-3090
+  User documentai
+  Port 10022
+
 Host kt
     HostName solang-kt
     User solang
