@@ -182,7 +182,7 @@ unset __conda_setup
 
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
-. "$HOME/.local/bin/env"
+# . "$HOME/.local/bin/env"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/solang/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/solang/Downloads/google-cloud-sdk/path.zsh.inc'; fi

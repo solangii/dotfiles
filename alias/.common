@@ -1,14 +1,46 @@
 alias vi="nvim"
 alias vim="nvim"
 alias checkip="curl ifconfig.me"
+alias myip="curl ifconfig.me"
 alias checkport="sudo lsof -PiTCP -sTCP:LISTEN"
 alias checkgpu="nvidia-smi --query-gpu=gpu_name --format=csv"
 alias checkcpu="btop"
 alias checkdriver="ls -R /lib/modules/`uname -r`/kernel/ | rg nvidia"
+
+# custom
+alias c="clear"
+alias h="history"
+alias reload="source ~/.zshrc"
+
+
+# python
+alias py="python3"
+alias pip="pip3"
+alias venv="python3 -m venv"
+alias activate="source venv/bin/activate"
+alias deactivate="deactivate"
+alias freeze="pip freeze > requirements.txt"
+alias install="pip install -r requirements.txt"
+alias jn="jupyter notebook"
+alias jl="jupyter lab"
+
+
+# docker
+alias d="docker"
+alias di="docker images"
+alias dps="docker ps"
+alias dpsa="docker ps -a"
+alias drmi="docker rmi"
+
 alias docker-compose="docker compose"
 alias dc="docker compose"
 alias dcu="docker compose up"
 alias dcd="docker compose down"
+alias dcb="docker compose build"
+alias dcl="docker compose logs"
+alias dcp="docker compose ps"
+alias dcr="docker compose restart"
+
 
 # to remember
 alias unzipchildfile="echo 'find . -name \"*.zip\" | xargs -P 5 -I fileName sh -c '\''unzip -o -d \"\$(dirname \"fileName\")/\$(basename -s .zip \"fileName\")\" \"fileName\"'\'"
