@@ -197,3 +197,8 @@ if [ -f '/Users/solang/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . 
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+
+# Add cargo bin to PATH for uv, rust tools, etc.
+if [ -d "$HOME/.cargo/bin" ]; then
+  export PATH="$HOME/.cargo/bin:$PATH"
+fi
