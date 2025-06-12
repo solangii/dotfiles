@@ -1,2 +1,3 @@
 alias checkcpunum="nproc"
 alias cat="batcat"
+alias nvitop="uvx nvitop"
