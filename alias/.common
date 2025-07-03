@@ -75,3 +75,7 @@ docker() {
         command docker "$@"
     fi
 }
+
+# claude command
+alias ccu="npx ccusage@latest"
+alias ccum="npx ccusage@latest blocks --live"
