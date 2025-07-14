@@ -40,6 +40,10 @@ alias dcb="docker compose build"
 alias dcl="docker compose logs"
 alias dcp="docker compose ps"
 alias dcr="docker compose restart"
+alias ctop="docker run --rm -ti \
+  --name=ctop \
+  --volume /var/run/docker.sock:/var/run/docker.sock:ro \
+  quay.io/vektorlab/ctop:latest"
 
 
 # to remember
