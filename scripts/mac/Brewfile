@@ -2,8 +2,8 @@
 
 # tap "homebrew/cask"
 # tap "homebrew/cask-fonts"
-tap "mas-cli/tap" 
-brew "mas" 
+tap "mas-cli/tap"
+brew "mas"
 
 brew "tmux"
 brew "lsd"
@@ -30,6 +30,7 @@ brew "eza"
 brew "zoxide"
 brew "neofetch"
 brew "git-quick-stats"
+brew "autojump"
 
 cask "pycharm"
 cask "datagrip"
